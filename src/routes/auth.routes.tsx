@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SignIn from "../pages/Signin";
+import SignIn from "../pages/SignIn";
 
 //criando o stack
 const Stack = createNativeStackNavigator();
