@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -6,21 +7,13 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import React from "react";
 
 import { CategoryProps } from "../../pages/Order";
-import { ProductProps } from "../../pages/Order";
-
-// interface ModalPickerProps {
-//   options: CategoryProps[];
-//   handleCloseModal: () => void;
-//   selectedItem: (item: CategoryProps) => void;
-// }
 
 interface ModalPickerProps {
-  options: CategoryProps[] | ProductProps[];
+  options: CategoryProps[];
   handleCloseModal: () => void;
-  selectedItem: (item: CategoryProps | ProductProps) => void;
+  selectedItem: (item: CategoryProps) => void;
 }
 
 const { width: WIDTH, height: HEIGHT } = Dimensions.get("window");
@@ -31,6 +24,7 @@ export function ModalPicker({
   selectedItem,
 }: ModalPickerProps) {
   function onPressItem(item: CategoryProps) {
+    //console.log(item);
     selectedItem(item);
     handleCloseModal();
   }
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
   content: {
     width: WIDTH - 20,
     height: HEIGHT / 2,
-    backgroundColor: "#fff",
+    backgroundColor: "#FFF",
     borderWidth: 1,
     borderColor: "#8a8a8a",
     borderRadius: 4,
