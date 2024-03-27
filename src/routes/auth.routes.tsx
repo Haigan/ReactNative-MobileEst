@@ -8,6 +8,7 @@ import SignIn from "../pages/SignIn";
 const Stack = createNativeStackNavigator();
 
 //Usuários não logados podem acessar
+
 function AuthRoutes() {
   return (
     <Stack.Navigator>
